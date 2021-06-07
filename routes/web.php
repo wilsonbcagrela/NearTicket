@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ApiTest;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +19,10 @@ use App\Http\Controllers\WelcomeController;
 //     return view('welcome');
 // });
 Route::get('/', [WelcomeController::class, 'welcome']);
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/fetch', [ApiTest::class, 'fetch']);
 
 

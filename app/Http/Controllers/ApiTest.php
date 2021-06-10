@@ -9,18 +9,22 @@ class ApiTest extends Controller
     public function fetch(){
         $response = Http::get('http://localhost:8080/all');
 
-        // $quizzes = json_decode($response->body());
-
-        // foreach($quizzes as $quiz){
-
-        //     echo $quiz;
-        // }
         $clients = json_decode($response->body());
         foreach($clients as $client){
             echo $client->name;
 
         }
-        // return $clients->name;
-        // echo "hello world";
+    }
+    public function createClient(Request $req){
+        $email = $req->email;
+        $name = $req->name;
+        $emailConfirm = 0;
+        $phone = $req->phone;
+        $password = $req->password;
+        Http::post("http://localhost:8080/signup?email={$email}&isEmailConfirmed={$emailConfirm}&name={$name}&password={$password}&phone={$phone}");
+
+        echo "saved";
+        return redirect("/");
+
     }
 }

@@ -19,10 +19,12 @@ use App\Http\Controllers\ApiTest;
 //     return view('welcome');
 // });
 Route::get('/', [WelcomeController::class, 'welcome']);
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/fetch', [ApiTest::class, 'fetch']);
+
+Route::post('test', [ApiTest::class, 'createClient']);
 
 

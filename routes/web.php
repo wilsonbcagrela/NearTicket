@@ -27,4 +27,4 @@ Route::get('/fetch', [ApiTest::class, 'fetch']);
 
 Route::post('test', [ApiTest::class, 'createClient']);
 
-
+Route::get('loginUser', [ApiTest::class, 'loginClient']);

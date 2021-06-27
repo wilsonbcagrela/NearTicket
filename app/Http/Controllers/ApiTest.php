@@ -27,4 +27,17 @@ class ApiTest extends Controller
         return redirect("/");
 
     }
+    public function loginClient(Request $req){
+        $email = $req->email;
+        $password = $req->password;
+        $response = Http::get("http://localhost:8080/login?email={$email}&password={$password}");
+
+        $clients = json_decode($response->body());
+        if($clients != []){
+            return redirect("/home");
+
+        }else{
+            return "no user with that name or password";
+        }
+    }
 }

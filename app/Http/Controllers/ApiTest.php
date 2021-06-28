@@ -30,10 +30,13 @@ class ApiTest extends Controller
     public function loginClient(Request $req){
         $email = $req->email;
         $password = $req->password;
-        $response = Http::get("http://localhost:8080/login?email={$email}&password={$password}");
-
-        $clients = json_decode($response->body());
-        if($clients != []){
+        $responseClient = Http::get("http://localhost:8080/login?email={$email}&password={$password}");
+        $responseUser = Http::get("http://localhost:8080/loginUser?email={$email}&password={$password}");
+        $responseAdmin = Http::get("http://localhost:8080/loginAdmin?email={$email}&password={$password}");
+        $clients = json_decode($responseClient->body());
+        $users = json_decode($responseUser->body());
+        $admins = json_decode($responseAdmin->body());
+        if($clients != [] || $users != [] || admins != []){
             return redirect("/home");
 
         }else{

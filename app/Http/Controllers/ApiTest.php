@@ -36,7 +36,7 @@ class ApiTest extends Controller
         $clients = json_decode($responseClient->body());
         $users = json_decode($responseUser->body());
         $admins = json_decode($responseAdmin->body());
-        if($clients != [] || $users != [] || admins != []){
+        if($clients != [] || $users != [] || $admins != []){
             return redirect("/home");
 
         }else{

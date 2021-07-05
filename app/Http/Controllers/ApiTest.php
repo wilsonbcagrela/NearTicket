@@ -36,9 +36,36 @@ class ApiTest extends Controller
         $clients = json_decode($responseClient->body());
         $users = json_decode($responseUser->body());
         $admins = json_decode($responseAdmin->body());
-        if($clients != [] || $users != [] || $admins != []){
-            return redirect("/home");
+        if($clients != []){
 
+            foreach($clients as $client){
+                session()->put('TypeUser', "Client");
+                session()->put('id', $client->id);
+                session()->put('name', $client->name);
+                session()->put('email', $client->email);
+            }
+            // echo session('TypeUser');
+            return redirect("/home");
+        }else if($users != []){
+            foreach($users as $user){
+
+                session()->put('TypeUser', "User");
+                session()->put('id', $user->id);
+                session()->put('userName', $user->userName);
+                session()->put('email', $user->email);
+                session()->put('Client_id', $user->client_id);
+            }
+            return redirect("/home");
+        }else if($admins != []){
+            foreach($admins as $admin){
+
+                session()->put('TypeUser', "Admin");
+                session()->put('id', $admin->id);
+                session()->put('userName', $admin->userName);
+                session()->put('email', $admin->email);
+                session()->put('role', $admin->role);
+            }
+            return redirect("/home");
         }else{
             return "no user with that name or password";
         }

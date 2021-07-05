@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ApiTest;
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,8 @@ Route::get('/fetch', [ApiTest::class, 'fetch']);
 Route::post('test', [ApiTest::class, 'createClient']);
 
 Route::get('loginUser', [ApiTest::class, 'loginClient']);
+
+// Route::get('sessionSet', [SessionController::class, 'storeSessionData'])->name('session.set');
+
+// Route::get('sessionGet', [SessionController::class, 'getSessionData'])->name('session.get');
+

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ApiTest;
+use App\Http\Controllers\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +37,7 @@ Route::get('/home', function(){
     }
     return redirect('/');
 });
-
+Route::get('/home',[ProjectController::class,'getProjectUser']);
 // Route::get('sessionSet', [SessionController::class, 'storeSessionData'])->name('session.set');
 
 // Route::get('sessionGet', [SessionController::class, 'getSessionData'])->name('session.get');

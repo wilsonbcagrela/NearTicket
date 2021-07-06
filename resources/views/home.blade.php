@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }}<br>
+                    @foreach ($projects as $project)
+                        {{$project->name}} <br>
+                        {{$project->description}} <br>
+                    @endforeach
                 </div>
             </div>
         </div>

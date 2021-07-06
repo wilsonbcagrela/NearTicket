@@ -41,7 +41,7 @@ class ApiTest extends Controller
             foreach($clients as $client){
                 session()->put('TypeUser', "Client");
                 session()->put('id', $client->id);
-                session()->put('name', $client->name);
+                session()->put('userName', $client->name);
                 session()->put('email', $client->email);
             }
             // echo session('TypeUser');

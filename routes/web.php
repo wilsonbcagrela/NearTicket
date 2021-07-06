@@ -22,13 +22,20 @@ use App\Http\Controllers\ApiTest;
 Route::get('/', [WelcomeController::class, 'welcome']);
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'] )->name('home');
 
 Route::get('/fetch', [ApiTest::class, 'fetch']);
 
 Route::post('test', [ApiTest::class, 'createClient']);
 
 Route::get('loginUser', [ApiTest::class, 'loginClient']);
+
+Route::get('/home', function(){
+    if(session('id') != null){
+        return view('home');
+    }
+    return redirect('/');
+});
 
 // Route::get('sessionSet', [SessionController::class, 'storeSessionData'])->name('session.set');
 

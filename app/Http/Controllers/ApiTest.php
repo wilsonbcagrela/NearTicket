@@ -45,7 +45,7 @@ class ApiTest extends Controller
                 session()->put('email', $client->email);
             }
             // echo session('TypeUser');
-            return redirect("/home");
+            return redirect('/home');
         }else if($users != []){
             foreach($users as $user){
 
@@ -55,7 +55,7 @@ class ApiTest extends Controller
                 session()->put('email', $user->email);
                 session()->put('Client_id', $user->client_id);
             }
-            return redirect("/home");
+            return redirect('/home');
         }else if($admins != []){
             foreach($admins as $admin){
 
@@ -65,7 +65,7 @@ class ApiTest extends Controller
                 session()->put('email', $admin->email);
                 session()->put('role', $admin->role);
             }
-            return redirect("/home");
+            return redirect('/home');
         }else{
             return "no user with that name or password";
         }

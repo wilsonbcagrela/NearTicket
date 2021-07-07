@@ -6,6 +6,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ApiTest;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TicketController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,7 @@ Route::get('/', [WelcomeController::class, 'welcome']);
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'] )->name('home');
+Route::get('/tickets', [TicketController::class, 'ticket']);
 
 Route::get('/fetch', [ApiTest::class, 'fetch']);
 
@@ -37,8 +39,13 @@ Route::get('/home', function(){
     }
     return redirect('/');
 });
-Route::get('/home',[ProjectController::class,'getProjectUser']);
-// Route::get('sessionSet', [SessionController::class, 'storeSessionData'])->name('session.set');
+// Route::get('/', function(){
+//     if(session() == null){
 
-// Route::get('sessionGet', [SessionController::class, 'getSessionData'])->name('session.get');
-
+//         return redirect('/home');
+//     }
+//     return redirect('/');
+// });
+Route::get('/user/projects',[ProjectController::class,'getProjectUser']);
+// Route::get('/admin/projects',[ProjectController::class,'getProjectAdmin']);
+Route::get('/user/project/{project_id}/tickets',[TicketController::class,'getProjectTickets'])->name('Tickets');

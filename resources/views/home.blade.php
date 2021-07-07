@@ -14,18 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('Your projects:') }}<br>
+                    {{ __('you are logged in') }}<br>
 
                     <div class="row justify-content-center">
-                        @foreach ($projects as $project)
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header"> {{$project->name}}</div>
-                                    <div class="card-body">{{$project->description}}</div>
-                                    <div class="card-footer"><a href="#" class="btn btn-primary">View tickets</a></div>
-                                </div>
-                            </div>
-                        @endforeach
+                        <a href="/user/projects" class="btn btn-primary">View projects</a>
                     </div>
                 </div>
             </div>

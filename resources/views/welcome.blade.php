@@ -5,9 +5,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body text-center">
-                    <img src="public\NearTicketLogo.png" alt="Logo">
-                    {{-- <img src="{{ Storage::get(.'public/images/NearTicketLogo.png') }}" alt="Logo"> --}}
                     <h3>Welcome to NearTicket</h3>
+                    <img src="{{URL('images/NearTicketLogo.png')}}" alt="Logo">
+                    {{-- <img src="{{ Storage::get(.'public/images/NearTicketLogo.png') }}" alt="Logo"> --}}
                 </div>
             </div>
         </div>

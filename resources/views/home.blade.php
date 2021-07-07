@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -14,11 +14,19 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}<br>
-                    @foreach ($projects as $project)
-                        {{$project->name}} <br>
-                        {{$project->description}} <br>
-                    @endforeach
+                    {{ __('Your projects:') }}<br>
+
+                    <div class="row justify-content-center">
+                        @foreach ($projects as $project)
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header"> {{$project->name}}</div>
+                                    <div class="card-body">{{$project->description}}</div>
+                                    <div class="card-footer"><a href="#" class="btn btn-primary">View tickets</a></div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

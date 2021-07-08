@@ -14,11 +14,17 @@
                         </div>
                     @endif
 
-                    {{ __('you are logged in') }}<br>
+                    {{ __('you are logged in ') }} {{ session('userName') }}<br>
 
                     <div class="row justify-content-center">
-                        <a href="/projects" class="btn btn-primary">View projects</a>
+                        <div class="col-sm d-flex justify-content-center mb-3">
+                            <a href="/projects" class="btn btn-primary">View projects</a>
+                        </div>
+                        <div class="col-sm d-flex justify-content-center mb-3">
+                            <a href="/projects" class="btn btn-secondary">View team</a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

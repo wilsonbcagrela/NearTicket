@@ -33,7 +33,10 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="card-footer"><a href="/projects" class="btn btn-info">go back</a></div>
+                <div class="card-footer">
+                    <a href="/projects" class="btn btn-info">go back</a>
+                    <a href="#" class="btn btn-dark">create a ticket</a>
+                </div>
             </div>
         </div>
     </div>

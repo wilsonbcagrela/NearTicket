@@ -23,9 +23,6 @@
                                     <div class="card-header"> {{$project->name}}</div>
                                     <div class="card-body">{{$project->description}}</div>
                                     <div class="card-footer">
-                                        {{-- <form method="GET" action="{{route('Tickets', ['project_id'=>$project->id])}}">
-                                            {{-- /user/projects/{{$project->id}}/tickets/" --}}
-                                            {{-- <input type="hidden" name="{{$project->id}}" value="{{$project->id}}"> --}}
                                         <a href="/project/{{$project->id}}/tickets" class="btn btn-primary">View tickets</a>
                                     </div>
                                 </div>

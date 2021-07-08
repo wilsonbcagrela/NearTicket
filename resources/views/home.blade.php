@@ -13,15 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('you are logged in ') }} {{ session('userName') }}<br>
-
+                    <div class="row justify-content-center mb-3 h1">
+                        {{ __('Welcome to NearTicket ') }} {{ session('userName') }} :-)<br>
+                    </div>
                     <div class="row justify-content-center">
                         <div class="col-sm d-flex justify-content-center mb-3">
                             <a href="/projects" class="btn btn-primary">View projects</a>
                         </div>
                         <div class="col-sm d-flex justify-content-center mb-3">
-                            <a href="/projects" class="btn btn-secondary">View team</a>
+                            <a href="/team" class="btn btn-secondary">View team</a>
                         </div>
                     </div>
 

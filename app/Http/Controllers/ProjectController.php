@@ -16,7 +16,7 @@ class ProjectController extends Controller
             $responseClient= Http::get("http://localhost:8080/client/projects?Client_id={$sessionClient_id}");
 
                 $projects = json_decode($responseUser->body());
-                return view('projects', [
+                return view('User/projects', [
                     "projects" => $projects
                 ]);
         }else if(session('TypeUser') == "Admin"){
@@ -24,7 +24,7 @@ class ProjectController extends Controller
             $responseAdmin = Http::get("http://localhost:8080/helpdesk/projects?id={$sessionID}");
 
             $projects = json_decode($responseAdmin->body());
-            return view('adminProjects', [
+            return view('Admin/adminProjects', [
                 "projects" => $projects
             ]);
         }

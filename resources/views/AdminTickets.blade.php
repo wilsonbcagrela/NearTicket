@@ -14,8 +14,9 @@
                         </div>
                     @endif
 
-                    {{ __('Your projects:') }}<br>
-
+                    <div class="row justify-content-center mb-3 h1">
+                        {{ __('Your projects:') }}
+                    </div>
                     <div class="row justify-content-center">
                         @foreach ($projects as $project)
                             <div class="col-md-6 mb-3">
@@ -41,3 +42,4 @@
     </div>
 </div>
 @endsection
+

@@ -7,6 +7,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ApiTest;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,7 @@ Route::get('/', [WelcomeController::class, 'welcome']);
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'] )->name('home');
-Route::get('/tickets', [TicketController::class, 'ticket']);
+// Route::get('/tickets', [TicketController::class, 'ticket']);
 
 Route::get('/fetch', [ApiTest::class, 'fetch']);
 
@@ -47,3 +48,5 @@ Route::get('/project/create',[ProjectController::class,'showCreateProject']);
 Route::get('/projects',[ProjectController::class,'getProject']);
 Route::get('/project/{project_id}/tickets',[TicketController::class,'getProjectTickets'])->name('Tickets');
 Route::post('project/Createprojects',[ProjectController::class,'createProject']);
+Route::get('/team', [userController::class, 'getsUserTeam']);
+

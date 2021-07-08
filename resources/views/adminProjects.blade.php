@@ -14,26 +14,26 @@
                         </div>
                     @endif
 
-                    {{ __('Tickets from project:') }}<br>
+                    {{ __('Your projects:') }}<br>
 
                     <div class="row justify-content-center">
-                        @foreach ($tickets as $ticket)
+                        @foreach ($projects as $project)
                             <div class="col-md-6 mb-3">
                                 <div class="card">
-                                    <div class="card-header"> {{$ticket->name}}</div>
-                                    <div class="card-body">
-                                        {{$ticket->description}} <br>
-                                        {{$ticket->urgency}}<br>
-                                        {{$ticket->gravity}}<br>
-                                        {{$ticket->supervisor}}<br>
-                                        {{$ticket->status}}<br>
+                                    <div class="card-header"> {{$project->name}}</div>
+                                    <div class="card-body">{{$project->description}}</div>
+                                    <div class="card-footer">
+                                        <a href="/project/{{$project->id}}/tickets" class="btn btn-primary">View tickets</a>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
-                <div class="card-footer"><a href="/projects" class="btn btn-info">go back</a></div>
+                <div class="card-footer">
+                    <a href="/home" class="btn btn-info">Go back</a>
+                    <a href="#" class="btn btn-dark">Add an admin to a project</a>
+                </div>
             </div>
         </div>
     </div>

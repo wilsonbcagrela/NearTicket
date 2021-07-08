@@ -26,12 +26,17 @@
                                         {{-- <form method="GET" action="{{route('Tickets', ['project_id'=>$project->id])}}">
                                             {{-- /user/projects/{{$project->id}}/tickets/" --}}
                                             {{-- <input type="hidden" name="{{$project->id}}" value="{{$project->id}}"> --}}
-                                        <a href="/user/project/{{$project->id}}/tickets" class="btn btn-primary">View tickets</a>
+                                        <a href="/project/{{$project->id}}/tickets" class="btn btn-primary">View tickets</a>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+                </div>
+                <div class="card-footer">
+                    <a href="/home" class="btn btn-info">Go back</a>
+                    <a href="#" class="btn btn-dark">Create a Project</a>
+                    <a href="#" class="btn btn-secondary">Add users to a project</a>
                 </div>
             </div>
         </div>

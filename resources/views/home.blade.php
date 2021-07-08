@@ -17,7 +17,7 @@
                     {{ __('you are logged in') }}<br>
 
                     <div class="row justify-content-center">
-                        <a href="/user/projects" class="btn btn-primary">View projects</a>
+                        <a href="/projects" class="btn btn-primary">View projects</a>
                     </div>
                 </div>
             </div>

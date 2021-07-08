@@ -30,22 +30,26 @@ class ProjectController extends Controller
         }
     }
 
+    public function showCreateProject(){
+        return view('createProject');
+    }
+
+    public function createProject(Request $req){
+        $client_id = session('Client_id');
+        $user_id = session('id');
+        $projectName = $req->name;
+        $projectDescription = $req->description;
+        Http::post("http://localhost:8080/user/project?Client_id={$client_id}&description={$projectDescription}&id={$user_id}&name={$projectName}");
+
+        return redirect('/projects');
+    }
+
+
     // else{//fix this
     //     $projects = json_decode($responseClient->body());
     //     return view('home', [
     //         "projects" => $projects
     //     ]);
-    // }
-    // public function getProjectAdmin(){
-    //     if(session('TypeUser') == "Admin"){
-    //         $sessionID = session('id');
-    //         $responseAdmin = Http::get("http://localhost:8080/helpdesk/projects?id={$sessionID}");
-
-    //         $projects = json_decode($responseAdmin->body());
-    //         return view('adminProjects', [
-    //             "projects" => $projects
-    //         ]);
-    //     }
     // }
 
 }

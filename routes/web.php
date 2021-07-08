@@ -46,6 +46,9 @@ Route::get('/home', function(){
 //     }
 //     return redirect('/');
 // });
+
+Route::get('/project/create',[ProjectController::class,'showCreateProject']);
 Route::get('/projects',[ProjectController::class,'getProject']);
 // Route::get('/admin/projects',[ProjectController::class,'getProjectAdmin']);
 Route::get('/project/{project_id}/tickets',[TicketController::class,'getProjectTickets'])->name('Tickets');
+Route::post('project/Createprojects',[ProjectController::class,'createProject']);

@@ -16,11 +16,14 @@ class TicketController extends Controller
         $client_id = session('Client_id');
         $responseUser = Http::get("http://localhost:8080/user/project/tickets?Project_id={$project_id}");
         $responseTeam = Http::get("http://localhost:8080/users/project?project_id={$project_id}");
+        $responseTeamAdmin = Http::get("http://localhost:8080/users/project/admins?project_id={$project_id}");
         $tickets = json_decode($responseUser->body());
         $TeamMembers = json_decode($responseTeam->body());
+        $TeamMembersAdmins = json_decode($responseTeamAdmin->body());
         return view('tickets', [
             "tickets" => $tickets,
-            "TeamMembers" => $TeamMembers
+            "TeamMembers" => $TeamMembers,
+            "TeamMembersAdmins" => $TeamMembersAdmins
         ]);
     }
     public function showCreateTicket(){

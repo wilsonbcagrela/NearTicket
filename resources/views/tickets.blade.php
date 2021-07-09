@@ -45,16 +45,25 @@
                             <div class="col-md-4 mb-3">
                                 <div class="card">
                                     <div class="card-header"> {{$TeamMember->userName}}</div>
-                                    {{-- <div class="card-body">
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="#" class="btn btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-secondary">Delete</a>
-                                    </div> --}}
                                 </div>
                             </div>
                         @endforeach
-                </div>
+                    </div>
+                    <div class="row justify-content-center mb-3 h1">
+                        {{ __('Admins of this project') }}<br>
+                    </div>
+                    <div class="row justify-content-center">
+                        @foreach ($TeamMembersAdmins as $TeamMembersAdmin)
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <div class="card-header"> {{$TeamMembersAdmin->userName}}</div>
+                                    <div class="card-body">
+                                        {{$TeamMembersAdmin->role}}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 <div class="card-footer">
                     <a href="/projects" class="btn btn-info">Go back</a>
                     <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a>

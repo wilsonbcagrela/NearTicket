@@ -68,15 +68,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="urgency" class="col-md-4 col-form-label text-md-right">Urgency</label>
+                            <label for="urgency" class="col-md-4 col-form-label text-md-right">Urgent</label>
 
                             <div class="col-md-6">
                                 <input class="form-control" type="checkbox" id="urgency" name="urgency" value="1">
-                                {{-- <select class="form-control" name="urgency" id="urgency">
-                                    <option value="MILD">Mild</option>
-                                    <option value="MEDIUM">Medium</option>
-                                    <option value="SERIOUS">Serious</option>
-                                  </select> --}}
                                 @error('urgency')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

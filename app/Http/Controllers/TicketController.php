@@ -23,15 +23,21 @@ class TicketController extends Controller
         return view('User/createTickets');
     }
     public function createTicket(Request $req){
-        echo "bruh";
 
         $project_id = $req->route('project_id');
-        // $client_id = session('Client_id');
-        // $user_id = session('id');
-        // $projectName = $req->name;
-        // $projectDescription = $req->description;
-        // Http::post("http://localhost:8080/user/project/ticket?Project_id=10&deadLine=12%2F12%2F2020&description=qwewqeweweq&gravity=MILD&name=asdsad&urgency=false");
+        $deadLine =strval($req->deadLine);
+        $description= $req->description;
+        $name = $req->name;
+        $gravity = $req->gravity;
+        $urgency = $req->urgency;
 
-        // return redirect('/project/{$project_id}');
+        if($urgency != 1){
+            $urgency = 0;
+        }
+
+        Http::post("http://localhost:8080/user/project/ticket?Project_id={$project_id}&deadLine={$deadLine}&description={$description}&gravity={$gravity}&name={$name}&urgency={$urgency}");
+
+        $pathback = "/project/{$project_id}";
+        return redirect($pathback);
     }
 }

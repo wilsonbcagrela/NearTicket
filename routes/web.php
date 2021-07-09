@@ -45,8 +45,10 @@ Route::get('/home', function(){
 // });
 
 Route::get('/project/create',[ProjectController::class,'showCreateProject']);
-Route::get('/projects',[ProjectController::class,'getProject']);
-Route::get('/project/{project_id}/tickets',[TicketController::class,'getProjectTickets'])->name('Tickets');
 Route::post('project/Createprojects',[ProjectController::class,'createProject']);
+Route::get('/projects',[ProjectController::class,'getProject']);
+Route::get('/project/{project_id}',[TicketController::class,'getProjectTickets'])->name('Tickets');
+Route::get('/project/{project_id}/create/ticket',[TicketController::class,'showCreateTicket']);
+Route::post('project/{project_id}/create/createTicket',[TicketController::class,'createTicket']);
 Route::get('/team', [userController::class, 'getsUserTeam']);
 

@@ -24,9 +24,9 @@
                                     <div class="card-header"> {{$project->name}}</div>
                                     <div class="card-body">{{$project->description}}</div>
                                     <div class="card-footer">
-                                        <a href="/project/{{$project->id}}/tickets" class="btn btn-primary">View tickets</a>
-                                        <a href="#" class="btn btn-secondary">Add users to project</a>
-                                        <a href="#" class="btn btn-dark">Project team</a>
+                                        <a href="/project/{{$project->id}}" class="btn btn-primary">View project</a>
+                                        {{-- <a href="#" class="btn btn-secondary">Add users to project</a>
+                                        <a href="#" class="btn btn-dark">Project team</a> --}}
                                     </div>
                                 </div>
                             </div>

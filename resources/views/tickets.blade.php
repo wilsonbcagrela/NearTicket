@@ -39,8 +39,9 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="/projects" class="btn btn-info">go back</a>
-                    <a href="#" class="btn btn-dark">create a ticket</a>
+                    <a href="/projects" class="btn btn-info">Go back</a>
+                    <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a>
+                    <a href="#" class="btn btn-dark">Add users to project</a>
                 </div>
             </div>
         </div>

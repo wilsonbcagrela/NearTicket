@@ -37,6 +37,23 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="row justify-content-center mb-3 h1">
+                        {{ __('Team of this project') }}<br>
+                    </div>
+                    <div class="row justify-content-center">
+                        @foreach ($TeamMembers as $TeamMember)
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <div class="card-header"> {{$TeamMember->userName}}</div>
+                                    {{-- <div class="card-body">
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-primary">Edit</a>
+                                        <a href="#" class="btn btn-secondary">Delete</a>
+                                    </div> --}}
+                                </div>
+                            </div>
+                        @endforeach
                 </div>
                 <div class="card-footer">
                     <a href="/projects" class="btn btn-info">Go back</a>

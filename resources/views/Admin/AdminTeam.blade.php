@@ -15,20 +15,6 @@
                     @endif
                     <div class="row justify-content-center">
                         <div class="col-md-3 mb-3 h1">
-                            {{ __('Your Client') }}
-                        </div>
-
-                        <div class="col-md-9 mb-3">
-                            <div class="card ">
-                                <div class="card-body">
-                                    @foreach ($client as $Company)
-                                        <b>Company name: </b>{{$Company->name}} <br>
-                                        <b>Company email:</b> {{$Company->email}} <br>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3 h1">
                             {{ __('Your Team') }}
                         </div>
 
@@ -38,6 +24,7 @@
                                     <div class="card-body">
                                         <b> Username:</b> {{$member->userName}} <br>
                                         <b> Name: </b>{{$member->firstName}} {{$member->lastName}} <br>
+                                        <b>Role: </b>{{$member->role}} <br>
                                         <b>Email: </b>{{$member->email}} <br>
                                     </div>
                                 </div>

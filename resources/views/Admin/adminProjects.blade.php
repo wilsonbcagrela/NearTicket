@@ -23,7 +23,7 @@
                                     <div class="card-header"> {{$project->name}}</div>
                                     <div class="card-body">{{$project->description}}</div>
                                     <div class="card-footer">
-                                        <a href="/project/{{$project->id}}/tickets" class="btn btn-primary">View tickets</a>
+                                        <a href="/project/{{$project->id}}" class="btn btn-primary">View tickets</a>
                                     </div>
                                 </div>
                             </div>

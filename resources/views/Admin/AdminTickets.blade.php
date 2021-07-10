@@ -56,7 +56,7 @@
                         @foreach ($TeamMembersAdmins as $TeamMembersAdmin)
                             <div class="col-md-4 mb-3">
                                 <div class="card">
-                                    <div class="card-header"> <b>User name: </b>{{$TeamMembersAdmin->userName}}</div>
+                                    <div class="card-header"><b>User name: </b> {{$TeamMembersAdmin->userName}}</div>
                                     <div class="card-body">
                                         <b>Role: </b> {{$TeamMembersAdmin->role}}
                                     </div>
@@ -66,11 +66,13 @@
                     </div>
                 <div class="card-footer">
                     <a href="/projects" class="btn btn-info">Go back</a>
-                    <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a>
-                    <a href="#" class="btn btn-dark">Add users to project</a>
+                    {{-- <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a> --}}
+                    <a href="#" class="btn btn-dark">Add admins to project</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+

@@ -20,11 +20,19 @@ class TicketController extends Controller
         $tickets = json_decode($responseUser->body());
         $TeamMembers = json_decode($responseTeam->body());
         $TeamMembersAdmins = json_decode($responseTeamAdmin->body());
-        return view('tickets', [
-            "tickets" => $tickets,
-            "TeamMembers" => $TeamMembers,
-            "TeamMembersAdmins" => $TeamMembersAdmins
-        ]);
+        if(session('TypeUser') == "User"){
+            return view('tickets', [
+                "tickets" => $tickets,
+                "TeamMembers" => $TeamMembers,
+                "TeamMembersAdmins" => $TeamMembersAdmins
+            ]);
+        }else{
+            return view('Admin/AdminTickets', [
+                "tickets" => $tickets,
+                "TeamMembers" => $TeamMembers,
+                "TeamMembersAdmins" => $TeamMembersAdmins
+            ]);
+        }
     }
     public function showCreateTicket(){
         return view('User/createTickets');

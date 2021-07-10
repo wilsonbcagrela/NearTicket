@@ -30,19 +30,20 @@ Route::post('test', [ApiTest::class, 'createClient']);
 
 Route::get('loginUser', [ApiTest::class, 'loginClient']);
 
+//middleware to prevent access
 Route::get('/home', function(){
     if(session('id') != null){
         return view('home');
     }
     return redirect('/');
 });
-// Route::get('/', function(){
-//     if(session() == null){
+Route::get('/', function(){
+    if(session('id') == null){
 
-//         return redirect('/home');
-//     }
-//     return redirect('/');
-// });
+        return view('welcome');
+    }
+    return redirect('/home');
+});
 
 Route::get('/project/create',[ProjectController::class,'showCreateProject']);
 Route::post('project/Createprojects',[ProjectController::class,'createProject']);

@@ -27,6 +27,14 @@ class ProjectController extends Controller
             return view('Admin/adminProjects', [
                 "projects" => $projects
             ]);
+        }else if(session('TypeUser') == "Client"){
+            $sessionID = session('id');
+            $responseClient = Http::get("http://localhost:8080/client/projects?Client_id={$sessionID}");
+
+            $projects = json_decode($responseClient->body());
+            return view('User/projects', [
+                "projects" => $projects
+            ]);
         }
     }
 

@@ -25,6 +25,13 @@ class userController extends Controller
             return view('Admin/AdminTeam',[
                 "team" => $team
             ]);
+        }else if(session('TypeUser') == "Client"){
+            $client_id = session('id');
+            $responseTeam = Http::get("http://localhost:8080/client/users?Client_id={$client_id}");
+            $team = json_decode($responseTeam->body());
+            return view('User/UserTeam',[
+                "team" => $team,
+            ]);
         }
 
     }

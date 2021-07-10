@@ -15,21 +15,32 @@
                     @endif
                     <div class="row justify-content-center">
                         <div class="col-md-3 mb-3 h1">
-                            {{ __('Your Client') }}
+                            {{ __('Client') }}
                         </div>
-
+                        @if (session('TypeUser') == "User")
+                            <div class="col-md-9 mb-3">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        @foreach ($client as $Company)
+                                            <b>Company name: </b>{{$Company->name}} <br>
+                                            <b>Company email:</b> {{$Company->email}} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if (session('TypeUser') == "Client")
                         <div class="col-md-9 mb-3">
                             <div class="card ">
                                 <div class="card-body">
-                                    @foreach ($client as $Company)
-                                        <b>Company name: </b>{{$Company->name}} <br>
-                                        <b>Company email:</b> {{$Company->email}} <br>
-                                    @endforeach
+                                    <b>Company name: </b>{{session('userName')}} <br>
+                                    <b>Company email:</b> {{session('email')}} <br>
                                 </div>
                             </div>
                         </div>
+                        @endif
                         <div class="col-md-3 mb-3 h1">
-                            {{ __('Your Team') }}
+                            {{ __('Team') }}
                         </div>
 
                         <div class="col-md-9 mb-3">

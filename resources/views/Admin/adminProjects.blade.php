@@ -14,11 +14,11 @@
                         </div>
                     @endif
                     <div class="row justify-content-center mb-3 h1">
-                        {{ __('Your projects') }}
+                        {{ __('Projects') }}
                     </div>
                     <div class="row justify-content-center">
                         @foreach ($projects as $project)
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <div class="card">
                                     <div class="card-header"> {{$project->name}}</div>
                                     <div class="card-body">{{$project->description}}</div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="card-footer">
                     <a href="/home" class="btn btn-info">Go back</a>
-                    <a href="#" class="btn btn-dark">Add an admin to a project</a>
+                    {{-- <a href="#" class="btn btn-dark">Add an admin to a project</a> --}}
                 </div>
             </div>
         </div>

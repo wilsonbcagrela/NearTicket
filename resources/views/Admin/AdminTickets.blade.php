@@ -20,19 +20,29 @@
                         @foreach ($tickets as $ticket)
                             <div class="col-md-6 mb-3">
                                 <div class="card">
-                                    <div class="card-header"> {{$ticket->name}}</div>
+                                    <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
                                     <div class="card-body">
 
-                                        {{$ticket->description}} <br>
-                                        {{$ticket->urgency}}<br>
-                                        {{$ticket->gravity}}<br>
-                                        {{$ticket->supervisor}}<br>
-                                        {{$ticket->status}}<br>
+                                        <b>Description </b>{{$ticket->description}} <br>
+                                        <b>Urgency: </b>{{$ticket->urgency}}<br>
+                                        <b>gravity: </b> {{$ticket->gravity}}<br>
+                                        <b>supervisor: </b> {{$ticket->supervisor}}<br>
+                                        <b>status: </b>{{$ticket->status}}<br>
+                                        @if ($ticket->isIssue == true)
+                                            <b>This ticket is a issue </b>
+                                        @endif
+                                        @if ($ticket->isRequest == true)
+                                            <b>This ticket is a request </b>
+                                        @endif
                                     </div>
-                                    <div class="card-footer">
-                                        <a href="#" class="btn btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-secondary">Delete</a>
-                                    </div>
+                                    @if(session("role")=="HELPDESK")
+                                        <div class="card-footer">
+
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
+                                            {{-- <a href="#" class="btn btn-secondary">Delete</a> --}}
+
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach

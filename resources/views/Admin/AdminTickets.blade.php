@@ -41,7 +41,7 @@
                                             @if(session("role")=="HELPDESK")
                                                 <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
                                             @else
-                                                <a href="" class="btn btn-primary">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-primary">Edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@
                                             @if(session("role")=="HELPDESK")
                                                 <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
                                             @else
-                                                <a href="" class="btn btn-primary">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-primary">Edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                             @if(session("role")=="HELPDESK")
                                                 <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
                                             @else
-                                                <a href="" class="btn btn-primary">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-primary">Edit</a>
                                             @endif
                                         </div>
                                     </div>

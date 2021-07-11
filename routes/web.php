@@ -54,4 +54,5 @@ Route::post('project/{project_id}/create/createTicket',[TicketController::class,
 Route::get('/team', [userController::class, 'getsUserTeam']);
 Route::get('/project/{project_id}/ticket/{ticket_id}',[TicketController::class,'showEditAdminTicket']);
 Route::post('project/{project_id}/ticket/EditTicket',[TicketController::class,'AdminEditTicket']);
-
+Route::get('/project/{project_id}/ticket/{ticket_id}/admin',[TicketController::class,'showEditAdminissueOrRequest']);
+Route::post('project/{project_id}/ticket/{ticket_id}/EditTicketIssueRequest',[TicketController::class,'AdminEditTicketissueOrRequest']);

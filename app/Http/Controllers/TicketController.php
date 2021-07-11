@@ -87,4 +87,21 @@ class TicketController extends Controller
         $pathback = "/project/{$project_id}";
         return redirect($pathback);
     }
+    public function showEditAdminissueOrRequest(){
+        return view('Admin/AdminEditIssueOrRequest');
+    }
+    public function AdminEditTicketissueOrRequest(Request $req){
+        $project_id = $req->route('project_id');
+        $ticket_id = $req->route('ticket_id');
+        $status = $req->status;
+        $supervisor = session("userName");
+        if(session("role")=="TECHNICIAN"){
+            Http::post("http://localhost:8080/technician/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&status={$status}&supervisor={$supervisor}");
+        }else{
+            Http::post("http://localhost:8080/consultant/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&status={$status}&supervisor={$supervisor}");
+        }
+
+        $pathback = "/project/{$project_id}";
+        return redirect($pathback);
+    }
 }

@@ -37,13 +37,13 @@
                                                 <b>This ticket is a request </b>
                                             @endif
                                         </div>
-                                        @if(session("role")=="HELPDESK")
-                                            <div class="card-footer">
-
+                                        <div class="card-footer">
+                                            @if(session("role")=="HELPDESK")
                                                 <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
-
-                                            </div>
-                                        @endif
+                                            @else
+                                                <a href="" class="btn btn-primary">Edit</a>
+                                            @endif
+                                        </div>
                                     </div>
                                 @endif
                             @endforeach
@@ -70,13 +70,13 @@
                                                 <b>This ticket is a request </b>
                                             @endif
                                         </div>
-                                        @if(session("role")=="HELPDESK")
-                                            <div class="card-footer">
-
+                                        <div class="card-footer">
+                                            @if(session("role")=="HELPDESK")
                                                 <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
-
-                                            </div>
-                                        @endif
+                                            @else
+                                                <a href="" class="btn btn-primary">Edit</a>
+                                            @endif
+                                        </div>
                                     </div>
                                 @endif
                             @endforeach
@@ -102,11 +102,13 @@
                                                 <b>This ticket is a request </b>
                                             @endif
                                         </div>
-                                        @if(session("role")=="HELPDESK")
-                                            <div class="card-footer">
+                                        <div class="card-footer">
+                                            @if(session("role")=="HELPDESK")
                                                 <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
-                                            </div>
-                                        @endif
+                                            @else
+                                                <a href="" class="btn btn-primary">Edit</a>
+                                            @endif
+                                        </div>
                                     </div>
                                 @endif
                             @endforeach

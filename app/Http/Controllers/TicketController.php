@@ -27,6 +27,17 @@ class TicketController extends Controller
                 "TeamMembersAdmins" => $TeamMembersAdmins
             ]);
         }else{
+            if(session("role")=="TECHNICIAN"){
+                //returns issues
+                $technicianTickets = Http::get("http://localhost:8080/technician/project/tickets?Project_id={$project_id}");
+                $tickets = json_decode($technicianTickets->body());
+
+            }else if(session("role")=="CONSULTANT"){
+                //returns requests
+                $consultantTickets = Http::get("http://localhost:8080/consultant/project/tickets?Project_id={$project_id}");
+                $tickets = json_decode($consultantTickets->body());
+
+            }
             return view('Admin/AdminTickets', [
                 "tickets" => $tickets,
                 "TeamMembers" => $TeamMembers,

@@ -19,7 +19,7 @@
                     @if (session('TypeUser') == "User")
                         <div class="row justify-content-center">
                             @foreach ($projects as $project)
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-6 mb-3">
                                     <div class="card">
                                         <div class="card-header"> {{$project->name}}</div>
                                         <div class="card-body">{{$project->description}}</div>

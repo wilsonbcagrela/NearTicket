@@ -18,13 +18,15 @@
                     </div>
                     <div class="row justify-content-center">
                         @foreach ($tickets as $ticket)
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <div class="card">
                                     <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
                                     <div class="card-body">
 
                                         <b>Description </b>{{$ticket->description}} <br>
-                                        <b>Urgency: </b>{{$ticket->urgency}}<br>
+                                        @if($ticket->urgency==1)
+                                            <b class="text-danger">! Urgent !</b><br>
+                                        @endif
                                         <b>gravity: </b> {{$ticket->gravity}}<br>
                                         <b>supervisor: </b> {{$ticket->supervisor}}<br>
                                         <b>status: </b>{{$ticket->status}}<br>

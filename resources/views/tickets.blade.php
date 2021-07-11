@@ -17,27 +17,102 @@
                         {{ __('Tickets from this project:') }}<br>
                     </div>
                     <div class="row justify-content-center">
-                        @foreach ($tickets as $ticket)
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-header"> {{$ticket->name}}</div>
-                                    <div class="card-body">
+                        <div class="col-md-4 mb-3">
+                            <div class="mb-3 h3">Tickets not initiated: </div>
+                            @foreach ($tickets as $ticket)
+                                @if($ticket->status == "NOT_INITIATED")
+                                    <div class="card">
+                                        <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
+                                        <div class="card-body">
 
-                                        {{$ticket->description}} <br>
-                                        @if($ticket->urgency==1)
-                                            <b class="text-danger">! Urgent !</b><br>
-                                        @endif
-                                        {{$ticket->gravity}}<br>
-                                        {{$ticket->supervisor}}<br>
-                                        {{$ticket->status}}<br>
+                                            <b>Description </b>{{$ticket->description}} <br>
+                                            @if($ticket->urgency==1)
+                                                <b class="text-danger">! Urgent !</b><br>
+                                            @endif
+                                            <b>gravity: </b> {{$ticket->gravity}}<br>
+                                            @if ($ticket->supervisor !="")
+                                                <b>supervisor: </b> {{$ticket->supervisor}}<br>
+                                            @endif
+                                            {{-- <b>status: </b>{{$ticket->status}}<br> --}}
+                                            @if ($ticket->isIssue == true)
+                                                <b>This ticket is a issue </b>
+                                            @endif
+                                            @if ($ticket->isRequest == true)
+                                                <b>This ticket is a request </b>
+                                            @endif
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="#" class="btn btn-primary">Edit</a>
+                                            <a href="#" class="btn btn-secondary">Delete</a>
+                                        </div>
                                     </div>
-                                    <div class="card-footer">
-                                        <a href="#" class="btn btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-secondary">Delete</a>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="mb-3 h3">Tickets not initiated: </div>
+                            @foreach ($tickets as $ticket)
+                                @if($ticket->status == "IN_PROGRESS")
+                                    <div class="card">
+                                        <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
+                                        <div class="card-body">
+
+                                            <b>Description </b>{{$ticket->description}} <br>
+                                            @if($ticket->urgency==1)
+                                                <b class="text-danger">! Urgent !</b><br>
+                                            @endif
+                                            <b>gravity: </b> {{$ticket->gravity}}<br>
+                                            @if ($ticket->supervisor !="")
+                                                <b>supervisor: </b> {{$ticket->supervisor}}<br>
+                                            @endif
+                                            {{-- <b>status: </b>{{$ticket->status}}<br> --}}
+                                            @if ($ticket->isIssue == true)
+                                                <b>This ticket is a issue </b>
+                                            @endif
+                                            @if ($ticket->isRequest == true)
+                                                <b>This ticket is a request </b>
+                                            @endif
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="#" class="btn btn-primary">Edit</a>
+                                            <a href="#" class="btn btn-secondary">Delete</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        @endforeach
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="mb-3 h3">Tickets not initiated: </div>
+                            @foreach ($tickets as $ticket)
+                                @if($ticket->status == "CONCLUDED")
+                                    <div class="card">
+                                        <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
+                                        <div class="card-body">
+
+                                            <b>Description </b>{{$ticket->description}} <br>
+                                            @if($ticket->urgency==1)
+                                                <b class="text-danger">! Urgent !</b><br>
+                                            @endif
+                                            <b>gravity: </b> {{$ticket->gravity}}<br>
+                                            @if ($ticket->supervisor !="")
+                                                <b>supervisor: </b> {{$ticket->supervisor}}<br>
+                                            @endif
+                                            {{-- <b>status: </b>{{$ticket->status}}<br> --}}
+                                            @if ($ticket->isIssue == true)
+                                                <b>This ticket is a issue </b>
+                                            @endif
+                                            @if ($ticket->isRequest == true)
+                                                <b>This ticket is a request </b>
+                                            @endif
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="#" class="btn btn-primary">Edit</a>
+                                            <a href="#" class="btn btn-secondary">Delete</a>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                     <div class="row justify-content-center mb-3 h1">
                         {{ __('Team of this project') }}<br>

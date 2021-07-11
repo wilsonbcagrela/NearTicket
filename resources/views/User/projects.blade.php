@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Projects') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,9 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="row justify-content-center mb-3 h1">
-                        {{ __('projects') }}
-                    </div>
+                    {{-- <div class="row justify-content-center mb-3 h1">
+                        {{ __('Projects') }}
+                    </div> --}}
                     @if (session('TypeUser') == "User")
                         <div class="row justify-content-center">
                             @foreach ($projects as $project)

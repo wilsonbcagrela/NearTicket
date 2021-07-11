@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Tickets') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,9 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="row justify-content-center mb-3 h1">
-                        {{ __('Tickets from this project:') }}<br>
-                    </div>
                     <div class="row justify-content-center">
                         <div class="col-md-4 mb-3">
                             <div class="mb-3 h3">Tickets not initiated: </div>
@@ -50,7 +47,7 @@
                             @endforeach
                         </div>
                         <div class="col-md-4 mb-3">
-                            <div class="mb-3 h3">Tickets not initiated: </div>
+                            <div class="mb-3 h3">Tickets in progress: </div>
                             @foreach ($tickets as $ticket)
                                 @if($ticket->status == "IN_PROGRESS")
                                     <div class="card">
@@ -82,7 +79,7 @@
                             @endforeach
                         </div>
                         <div class="col-md-4 mb-3">
-                            <div class="mb-3 h3">Tickets not initiated: </div>
+                            <div class="mb-3 h3">Tickets concluded: </div>
                             @foreach ($tickets as $ticket)
                                 @if($ticket->status == "CONCLUDED")
                                     <div class="card">

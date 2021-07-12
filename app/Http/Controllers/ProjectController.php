@@ -52,12 +52,16 @@ class ProjectController extends Controller
         return redirect('/projects');
     }
 
+    public function showAddUser(){
+        return view('User/addUsersProject');
+    }
+    public function AddUser(Request $req){
+        $client_id = session('Client_id');
+        $project_id = $req->route('project_id');
+        $user_id = $req->idUser;
+        Http::post("http://localhost:8080/user/project/addUser?Client_id={$client_id}&Project_id={$project_id}&id={$user_id}");
 
-    // else{//fix this
-    //     $projects = json_decode($responseClient->body());
-    //     return view('home', [
-    //         "projects" => $projects
-    //     ]);
-    // }
-
+        $pathback = "/project/{$project_id}";
+        return redirect($pathback);
+    }
 }

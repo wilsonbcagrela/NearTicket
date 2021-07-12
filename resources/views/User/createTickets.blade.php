@@ -29,7 +29,7 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-6">
-                                <input id="description" type="text" class="form-control" name="description" required autocomplete="description">
+                                <textarea id="description" type="textarea" class="form-control" name="description" required autocomplete="description" rows="3"></textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">

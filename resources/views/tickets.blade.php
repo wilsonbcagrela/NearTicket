@@ -18,7 +18,7 @@
                             <div class="mb-3 h3">Tickets not initiated: </div>
                             @foreach ($tickets as $ticket)
                                 @if($ticket->status == "NOT_INITIATED")
-                                    <div class="card">
+                                    <div class="card mb-3">
                                         <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
                                         <div class="card-body">
 
@@ -54,7 +54,7 @@
                             <div class="mb-3 h3">Tickets in progress: </div>
                             @foreach ($tickets as $ticket)
                                 @if($ticket->status == "IN_PROGRESS")
-                                    <div class="card">
+                                    <div class="card mb-3">
                                         <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
                                         <div class="card-body">
 
@@ -89,7 +89,7 @@
                             <div class="mb-3 h3">Tickets concluded: </div>
                             @foreach ($tickets as $ticket)
                                 @if($ticket->status == "CONCLUDED")
-                                    <div class="card">
+                                    <div class="card mb-3">
                                         <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
                                         <div class="card-body">
 
@@ -151,7 +151,7 @@
                 <div class="card-footer">
                     <a href="/projects" class="btn btn-info">Go back</a>
                     <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a>
-                    <a href="#" class="btn btn-dark">Add users to project</a>
+                    <a href="/project/{{request('project_id')}}/addUser" class="btn btn-dark">Add users to project</a>
                 </div>
             </div>
         </div>

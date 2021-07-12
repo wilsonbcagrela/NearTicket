@@ -42,9 +42,9 @@
                                         </div>
                                         <div class="card-footer">
                                             @if(session("role")=="HELPDESK")
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-warning">Edit</a>
                                             @else
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-primary">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-warning">Edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -78,9 +78,9 @@
                                         </div>
                                         <div class="card-footer">
                                             @if(session("role")=="HELPDESK")
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-warning">Edit</a>
                                             @else
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-primary">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-warning">Edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -100,7 +100,6 @@
                                             @endif
                                             <b>gravity: </b> {{$ticket->gravity}}<br>
                                             <b>supervisor: </b> {{$ticket->supervisor}}<br>
-                                            {{-- <b>status: </b>{{$ticket->status}}<br> --}}
                                             @if ($ticket->isIssue == true)
                                                 <b>This ticket is a issue </b><br>
                                             @endif
@@ -113,9 +112,9 @@
                                         </div>
                                         <div class="card-footer">
                                             @if(session("role")=="HELPDESK")
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-primary">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-warning">Edit</a>
                                             @else
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-primary">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-warning">Edit</a>
                                             @endif
                                         </div>
                                     </div>

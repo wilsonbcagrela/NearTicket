@@ -43,8 +43,8 @@
 
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#" class="btn btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-secondary">Delete</a>
+                                            <a href="#" class="btn btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>
                                 @endif
@@ -78,8 +78,8 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#" class="btn btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-secondary">Delete</a>
+                                            <a href="#" class="btn btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>
                                 @endif
@@ -113,8 +113,8 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#" class="btn btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-secondary">Delete</a>
+                                            <a href="#" class="btn btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>
                                 @endif

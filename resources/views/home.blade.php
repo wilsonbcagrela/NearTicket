@@ -30,6 +30,15 @@
                                 <div class="card-footer"><a href="/team" class="btn btn-secondary">View team</a></div>
                             </div>
                         </div>
+                        @if(session('TypeUser')== "Client")
+                            <div class="col-sm-6 d-flex justify-content-center mb-3">
+                                <div class="card">
+                                    <div class="card-header">Invite your team</div>
+                                    <div class="card-body">In this section of the website invite users</div>
+                                    <div class="card-footer"><a href="/team" class="btn btn-dark">Invite users</a></div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
 
                 </div>

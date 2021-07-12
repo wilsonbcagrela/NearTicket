@@ -32,11 +32,15 @@
                                             @endif
                                             {{-- <b>status: </b>{{$ticket->status}}<br> --}}
                                             @if ($ticket->isIssue == true)
-                                                <b>This ticket is a issue </b>
+                                                <b>This ticket is a issue </b><br>
                                             @endif
                                             @if ($ticket->isRequest == true)
-                                                <b>This ticket is a request </b>
+                                                <b>This ticket is a request </b><br>
                                             @endif
+                                            <b>Created: </b> {{$ticket->creationDate}} <br>
+                                            <b>Dead line: </b> {{$ticket->deadLine}} <br>
+                                            <b>Owner: </b> {{$ticket->owner}}<br>
+
                                         </div>
                                         <div class="card-footer">
                                             <a href="#" class="btn btn-primary">Edit</a>
@@ -64,11 +68,14 @@
                                             @endif
                                             {{-- <b>status: </b>{{$ticket->status}}<br> --}}
                                             @if ($ticket->isIssue == true)
-                                                <b>This ticket is a issue </b>
+                                                <b>This ticket is a issue </b><br>
                                             @endif
                                             @if ($ticket->isRequest == true)
-                                                <b>This ticket is a request </b>
+                                                <b>This ticket is a request </b><br>
                                             @endif
+                                            <b>Created: </b> {{$ticket->creationDate}} <br>
+                                            <b>Dead line: </b> {{$ticket->deadLine}} <br>
+                                            <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
                                             <a href="#" class="btn btn-primary">Edit</a>
@@ -96,11 +103,14 @@
                                             @endif
                                             {{-- <b>status: </b>{{$ticket->status}}<br> --}}
                                             @if ($ticket->isIssue == true)
-                                                <b>This ticket is a issue </b>
+                                                <b>This ticket is a issue </b><br>
                                             @endif
                                             @if ($ticket->isRequest == true)
-                                                <b>This ticket is a request </b>
+                                                <b>This ticket is a request </b><br>
                                             @endif
+                                            <b>Created: </b> {{$ticket->creationDate}} <br>
+                                            <b>Dead line: </b> {{$ticket->deadLine}} <br>
+                                            <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
                                             <a href="#" class="btn btn-primary">Edit</a>

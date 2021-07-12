@@ -51,17 +51,18 @@ class TicketController extends Controller
     public function createTicket(Request $req){
 
         $project_id = $req->route('project_id');
-        $deadLine =strval($req->deadLine);
+        $deadLine =$req->deadLine;
         $description= $req->description;
         $name = $req->name;
         $gravity = $req->gravity;
         $urgency = $req->urgency;
-
+        $owner = session("userName");
+        $currentDateTime = date('Y-m-d');
         if($urgency != 1){
             $urgency = 0;
         }
 
-        Http::post("http://localhost:8080/user/project/ticket?Project_id={$project_id}&deadLine={$deadLine}&description={$description}&gravity={$gravity}&name={$name}&urgency={$urgency}");
+        Http::post("http://localhost:8080/user/project/ticket?Project_id={$project_id}&creationDate={$currentDateTime}&deadLine={$deadLine}&description={$description}&gravity={$gravity}&name={$name}&owner={$owner}&urgency={$urgency}");
 
         $pathback = "/project/{$project_id}";
         return redirect($pathback);

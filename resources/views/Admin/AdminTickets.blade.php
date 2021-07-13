@@ -41,10 +41,12 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
                                             @if(session("role")=="HELPDESK")
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-warning">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-secondary">Edit</a>
                                             @else
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-warning">Edit</a>
+
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-secondary">Edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -77,10 +79,11 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
                                             @if(session("role")=="HELPDESK")
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-warning">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-secondary">Edit</a>
                                             @else
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-warning">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-secondary">Edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -111,10 +114,11 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
                                             @if(session("role")=="HELPDESK")
-                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-warning">Edit</a>
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}" class="btn btn-secondary">Edit</a>
                                             @else
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-warning">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/admin" class="btn btn-secondary">Edit</a>
                                             @endif
                                         </div>
                                     </div>

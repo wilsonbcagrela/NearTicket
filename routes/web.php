@@ -8,6 +8,7 @@ use App\Http\Controllers\ApiTest;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,9 +53,15 @@ Route::get('/project/{project_id}',[TicketController::class,'getProjectTickets']
 Route::get('/project/{project_id}/create/ticket',[TicketController::class,'showCreateTicket']);
 Route::post('project/{project_id}/create/createTicket',[TicketController::class,'createTicket']);
 Route::get('/team', [userController::class, 'getsUserTeam']);
+
 Route::get('/project/{project_id}/ticket/{ticket_id}',[TicketController::class,'showEditAdminTicket']);
 Route::post('project/{project_id}/ticket/EditTicket',[TicketController::class,'AdminEditTicket']);
+
 Route::get('/project/{project_id}/ticket/{ticket_id}/admin',[TicketController::class,'showEditAdminissueOrRequest']);
 Route::post('project/{project_id}/ticket/{ticket_id}/EditTicketIssueRequest',[TicketController::class,'AdminEditTicketissueOrRequest']);
+
 Route::get('/project/{project_id}/addUser',[ProjectController::class,'showAddUser']);
 Route::Post('/project/{project_id}/addUserToProject',[ProjectController::class,'AddUser']);
+
+Route::get('/project/{project_id}/ticket/{ticket_id}/comments',[CommentController::class,'getComments']);
+Route::post('/project/{project_id}/ticket/{ticket_id}/postComment',[CommentController::class,'postComments']);

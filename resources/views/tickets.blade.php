@@ -43,7 +43,8 @@
 
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#" class="btn btn-warning">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
+                                            <a href="#" class="btn btn-secondary">Edit</a>
                                             <a href="#" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>
@@ -57,7 +58,6 @@
                                     <div class="card mb-3">
                                         <div class="card-header"><b>Name: </b> {{$ticket->name}}</div>
                                         <div class="card-body">
-
                                             <b>Description </b>{{$ticket->description}} <br>
                                             @if($ticket->urgency==1)
                                                 <b class="text-danger">! Urgent !</b><br>
@@ -78,7 +78,8 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#" class="btn btn-warning">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
+                                            <a href="#" class="btn btn-secondary">Edit</a>
                                             <a href="#" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>
@@ -113,7 +114,8 @@
                                             <b>Owner: </b> {{$ticket->owner}}<br>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#" class="btn btn-warning">Edit</a>
+                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
+                                            <a href="#" class="btn btn-secondary">Edit</a>
                                             <a href="#" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>

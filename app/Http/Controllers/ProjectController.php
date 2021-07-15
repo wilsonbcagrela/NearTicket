@@ -59,11 +59,15 @@ class ProjectController extends Controller
         return view('User/addUsersProject');
     }
     public function AddUser(Request $req){
-        $client_id = session('Client_id');
         $project_id = $req->route('project_id');
         $userName = $req->userName;
-        Http::post("http://localhost:8080/user/project/addUser?Client_id={$client_id}&Project_id={$project_id}&userName={$userName}");
-
+        if(session('TypeUser') == "User"){
+            $client_id = session('Client_id');
+            Http::post("http://localhost:8080/user/project/addUser?Client_id={$client_id}&Project_id={$project_id}&userName={$userName}");
+        }
+        if(session('TypeUser') == "Admin"){
+            Http::post("http://localhost:8080/helpdesk/project/addAdmin?Project_id={$project_id}&userName={$userName}");
+        }
         $pathback = "/project/{$project_id}";
         return redirect($pathback);
     }

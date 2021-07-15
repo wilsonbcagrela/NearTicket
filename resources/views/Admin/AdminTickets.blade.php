@@ -155,7 +155,7 @@
                     </div>
                 <div class="card-footer">
                     <a href="/projects" class="btn btn-info">Go back</a>
-                    <a href="#" class="btn btn-dark">Add admins to project</a>
+                    <a href="/project/{{request('project_id')}}/addUser" class="btn btn-dark">Add admins to project</a>
                 </div>
             </div>
         </div>

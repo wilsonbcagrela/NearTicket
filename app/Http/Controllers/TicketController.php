@@ -105,4 +105,29 @@ class TicketController extends Controller
         $pathback = "/project/{$project_id}";
         return redirect($pathback);
     }
+    public function showEditTicketUser(Request $req){
+        $project_id = $req->route('project_id');
+        $ticket_id = $req->route('ticket_id');
+        $responseTicket = Http::get("http://localhost:8080/user/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}");
+        $tickets = json_decode($responseTicket->body());
+        return view('User/UserEditTicket', [
+            "tickets" => $tickets
+        ]);
+    }
+    public function editTicketUser(Request $req){
+        $project_id = $req->route('project_id');
+        $ticket_id = $req->route('ticket_id');
+        $deadLine =$req->deadLine;
+        $description= $req->description;
+        $name = $req->name;
+        $gravity = $req->gravity;
+        $urgency = $req->urgency;
+        if($urgency != 1){
+            $urgency = 0;
+        }
+        Http::put("http://localhost:8080/user/project/ticket/{ticketId}?Project_id={$project_id}&deadLine={$deadLine}&description={$description}&gravity={$gravity}&id={$ticket_id}&name={$name}&urgency={$urgency}");
+
+        $pathback = "/project/{$project_id}";
+        return redirect($pathback);
+    }
 }

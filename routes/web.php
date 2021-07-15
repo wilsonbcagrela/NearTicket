@@ -65,3 +65,6 @@ Route::Post('/project/{project_id}/addUserToProject',[ProjectController::class,'
 
 Route::get('/project/{project_id}/ticket/{ticket_id}/comments',[CommentController::class,'getComments']);
 Route::post('/project/{project_id}/ticket/{ticket_id}/postComment',[CommentController::class,'postComments']);
+
+Route::get('/project/{project_id}/ticket/{ticket_id}/edit',[TicketController::class,'showEditTicketUser']);
+Route::post('/project/{project_id}/ticket/{ticket_id}/editTicketUser',[TicketController::class,'editTicketUser']);

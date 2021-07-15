@@ -158,8 +158,10 @@
                     </div>
                 <div class="card-footer">
                     <a href="/projects" class="btn btn-info">Go back</a>
-                    <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a>
-                    <a href="/project/{{request('project_id')}}/addUser" class="btn btn-dark">Add users to project</a>
+                    @if(session('TypeUser') == "User")
+                        <a href="/project/{{request('project_id')}}/create/ticket" class="btn btn-secondary">Create a ticket</a>
+                        <a href="/project/{{request('project_id')}}/addUser" class="btn btn-dark">Add users to project</a>
+                    @endif
                 </div>
             </div>
         </div>

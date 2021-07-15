@@ -9,6 +9,8 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ClientController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,3 +70,6 @@ Route::post('/project/{project_id}/ticket/{ticket_id}/postComment',[CommentContr
 
 Route::get('/project/{project_id}/ticket/{ticket_id}/edit',[TicketController::class,'showEditTicketUser']);
 Route::post('/project/{project_id}/ticket/{ticket_id}/editTicketUser',[TicketController::class,'editTicketUser']);
+
+Route::get('/CreateUser',[ClientController::class,'showCreateUser']);
+Route::post('/postUser',[ClientController::class,'postUser']);

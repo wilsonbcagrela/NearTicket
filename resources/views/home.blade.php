@@ -16,14 +16,14 @@
                         {{ __('Welcome to NearTicket ') }} {{ session('userName') }} <br>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-sm-6 d-flex justify-content-center mb-3">
+                        <div class="col-sm-6 mb-3">
                             <div class="card">
                                 <div class="card-header">Look at your projects</div>
                                 <div class="card-body">In this section of the website you can see your project</div>
                                 <div class="card-footer"><a href="/projects" class="btn btn-primary">View projects</a></div>
                             </div>
                         </div>
-                        <div class="col-sm-6 d-flex justify-content-center mb-3">
+                        <div class="col-sm-6 mb-3">
                             <div class="card">
                                 <div class="card-header">Look at your team</div>
                                 <div class="card-body">In this section of the website you can see your team</div>
@@ -31,16 +31,15 @@
                             </div>
                         </div>
                         @if(session('TypeUser')== "Client")
-                            <div class="col-sm-6 d-flex justify-content-center mb-3">
+                            <div class="col-sm-6 mb-3">
                                 <div class="card">
                                     <div class="card-header">Invite your team</div>
                                     <div class="card-body">In this section of the website invite users</div>
-                                    <div class="card-footer"><a href="/team" class="btn btn-dark">Invite users</a></div>
+                                    <div class="card-footer"><a href="/CreateUser" class="btn btn-dark">Create a user</a></div>
                                 </div>
                             </div>
                         @endif
                     </div>
-
                 </div>
             </div>
         </div>

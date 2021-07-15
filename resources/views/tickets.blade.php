@@ -44,8 +44,10 @@
                                         </div>
                                         <div class="card-footer">
                                             <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/edit" class="btn btn-secondary">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            @if(session('TypeUser') == "User")
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/edit" class="btn btn-secondary">Edit</a>
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                            @endif
                                         </div>
                                     </div>
                                 @endif
@@ -79,8 +81,10 @@
                                         </div>
                                         <div class="card-footer">
                                             <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/edit" class="btn btn-secondary">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            @if(session('TypeUser') == "User")
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/edit" class="btn btn-secondary">Edit</a>
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                            @endif
                                         </div>
                                     </div>
                                 @endif
@@ -115,8 +119,10 @@
                                         </div>
                                         <div class="card-footer">
                                             <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/comments" class="btn btn-primary">Open</a>
-                                            <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/edit" class="btn btn-secondary">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            @if(session('TypeUser') == "User")
+                                                <a href="/project/{{request('project_id')}}/ticket/{{$ticket->id}}/edit" class="btn btn-secondary">Edit</a>
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                            @endif
                                         </div>
                                     </div>
                                 @endif

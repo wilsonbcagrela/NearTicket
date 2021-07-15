@@ -20,7 +20,7 @@ class TicketController extends Controller
         $tickets = json_decode($responseUser->body());
         $TeamMembers = json_decode($responseTeam->body());
         $TeamMembersAdmins = json_decode($responseTeamAdmin->body());
-        if(session('TypeUser') == "User"){
+        if(session('TypeUser') == "User" || session('TypeUser') == "Client"){
             return view('tickets', [
                 "tickets" => $tickets,
                 "TeamMembers" => $TeamMembers,
@@ -83,7 +83,7 @@ class TicketController extends Controller
         $ticket_id = $req->ticket_id;
         $project_id= $req->route('project_id');
 
-        Http::post("http://localhost:8080/helpdesk/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&isIssue={$issue}&isRequest={$request}");
+        Http::put("http://localhost:8080/helpdesk/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&isIssue={$issue}&isRequest={$request}");
 
         $pathback = "/project/{$project_id}";
         return redirect($pathback);
@@ -97,9 +97,9 @@ class TicketController extends Controller
         $status = $req->status;
         $supervisor = session("userName");
         if(session("role")=="TECHNICIAN"){
-            Http::post("http://localhost:8080/technician/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&status={$status}&supervisor={$supervisor}");
+            Http::put("http://localhost:8080/technician/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&status={$status}&supervisor={$supervisor}");
         }else{
-            Http::post("http://localhost:8080/consultant/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&status={$status}&supervisor={$supervisor}");
+            Http::put("http://localhost:8080/consultant/project/ticket/{ticketId}?Project_id={$project_id}&id={$ticket_id}&status={$status}&supervisor={$supervisor}");
         }
 
         $pathback = "/project/{$project_id}";

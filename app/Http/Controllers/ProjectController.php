@@ -15,10 +15,10 @@ class ProjectController extends Controller
 
             $responseClient= Http::get("http://localhost:8080/client/projects?Client_id={$sessionClient_id}");
 
-                $projects = json_decode($responseUser->body());
-                return view('User/projects', [
-                    "projects" => $projects
-                ]);
+            $projects = json_decode($responseUser->body());
+            return view('User/projects', [
+                "projects" => $projects
+            ]);
         }else if(session('TypeUser') == "Admin"){
             $sessionID = session('id');
             $responseAdmin = Http::get("http://localhost:8080/helpdesk/projects?id={$sessionID}");
@@ -30,10 +30,13 @@ class ProjectController extends Controller
         }else if(session('TypeUser') == "Client"){
             $sessionID = session('id');
             $responseClient = Http::get("http://localhost:8080/client/projects?Client_id={$sessionID}");
-
+            $responseUsersOfClientv = Http::get("http://localhost:8080/client/users?Client_id={$sessionID}");
             $projects = json_decode($responseClient->body());
+            $users = json_decode($responseUsersOfClientv->body());
+
             return view('User/projects', [
-                "projects" => $projects
+                "projects" => $projects,
+                "users" => $users
             ]);
         }
     }

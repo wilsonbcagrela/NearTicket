@@ -61,8 +61,8 @@ class ProjectController extends Controller
     public function AddUser(Request $req){
         $client_id = session('Client_id');
         $project_id = $req->route('project_id');
-        $user_id = $req->idUser;
-        Http::post("http://localhost:8080/user/project/addUser?Client_id={$client_id}&Project_id={$project_id}&id={$user_id}");
+        $userName = $req->userName;
+        Http::post("http://localhost:8080/user/project/addUser?Client_id={$client_id}&Project_id={$project_id}&userName={$userName}");
 
         $pathback = "/project/{$project_id}";
         return redirect($pathback);

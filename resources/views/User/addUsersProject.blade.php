@@ -11,11 +11,12 @@
                     <form method="POST" action="addUserToProject">
                         @csrf
                         <div class="form-group row">
-                            <label for="idUser" class="col-md-4 col-form-label text-md-right">Please enter id of user</label>
+                            <label for="userName" class="col-md-4 col-form-label text-md-right">User name</label>
 
                             <div class="col-md-6">
-                                <input type="number" name= "idUser">
-                                @error('idUser')
+                                <input id="userName" type="text" class="form-control @error('userName') is-invalid @enderror" name="userName" required autocomplete="userName" autofocus>
+
+                                @error('userName')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

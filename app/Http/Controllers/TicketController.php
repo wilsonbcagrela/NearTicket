@@ -130,4 +130,7 @@ class TicketController extends Controller
         $pathback = "/project/{$project_id}";
         return redirect($pathback);
     }
+    public function deleteTicket(Request $req){
+        //not implemented
+    }
 }

@@ -67,7 +67,10 @@ class ApiTest extends Controller
             }
             return redirect('/home');
         }else{
-            return "no user with that name or password";
+            $error = "Wrong password ou email given";
+            return view("auth/login", [
+                "error" => $error
+            ]);
         }
     }
 }

@@ -6,7 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
+                @if(isset($error))
+                    <p class="text-danger text-center">{{$error}}</p>
+                @endif
                 <div class="card-body">
                     <form method="GET" action="loginUser">
                         @csrf
